@@ -73,7 +73,7 @@ if(isset($_POST["saveme"])) {
     </div>
   </div>
   <footer>
-    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://luke-berry.co.uk/blog/?p=16">blog post</a> associated with this project. Source code is available on <a href="http://www.github.com/lukeberry99/Geolocatr.git">Github</a></p>
+    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://luke-berry.co.uk/blog/?p=16">blog post</a> associated with this project. Source code is available on <a href="http://www.github.com/lukeberry99/geolocatr">Github</a></p>
   </footer>
   <script>
     document.getElementById("file").onchange = function() {
@@ -87,6 +87,8 @@ if(isset($_POST["saveme"])) {
   </script>
 </body>
 </html>
+ ?>
+
  <?php
 } else {
 ?>
@@ -124,7 +126,7 @@ if(isset($_POST["saveme"])) {
     </div>
   </div>
   <footer>
-    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://luke-berry.co.uk/blog/?p=16">blog post</a> associated with this project. Source code is available on <a href="http://www.github.com/lukeberry99/Geolocatr.git">Github</a></p>
+    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://luke-berry.co.uk/blog/?p=16">blog post</a> associated with this project. Source code is available on <a href="http://www.github.com/lukeberry99/geolocatr">Github</a></p>
   </footer>
   <script>
     document.getElementById("file").onchange = function() {
