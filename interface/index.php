@@ -1,4 +1,9 @@
-<!doctype html>
+<?php
+require_once('Assets/class_exif.php');
+$Exif = new Exif;
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -35,7 +40,7 @@
     </div>
   </div>
   <footer>
-    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://www.luke-berry.co.uk/blog/">blog post</a> associated with this project.</p>
+    <p>A project by <a href="http://www.luke-berry.co.uk/">Luke Berry</a> view the <a href="http://www.luke-berry.co.uk/blog/">blog post</a> associated with this project. Source code is available on <a href="http://www.github.com/lukeberry99/geolocatr">Github</a></p>
   </footer>
 </body>
 </html>
