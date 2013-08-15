@@ -1,0 +1,31 @@
+section[role=upload] {
+  width: 90%;
+  max-width: 90%;
+  margin: 20px auto;
+
+  .upload-area {
+    background: $turquoise;
+    padding: 30px 0 30px 0;
+    border-top: 10px solid $green-sea;
+    button {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 240px;
+      display: block;
+      height: 100px;
+      background: $peter-river;
+      border: 0;
+      color: $clouds;
+      border-bottom: 5px solid $belize-hole;
+      &:hover {
+        cursor: pointer;
+        background: $belize-hole;
+        border-color: $peter-river;
+      }
+      &:active {
+        background: $belize-hole;
+        border-color: $peter-river;
+      }
+    }
+  }
+}

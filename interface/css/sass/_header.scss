@@ -1,0 +1,19 @@
+header[role=logo] {
+  width: 90%;
+  margin: 10px auto;
+  h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    color: $turquoise;
+    letter-spacing: 2px;
+
+    span {
+      font-weight: 200;
+      font-size: 1rem;
+      color: $green-sea;
+      display: block;
+      margin: -8px 0 0 37px;
+      letter-spacing: 1px;
+    }
+  }
+}

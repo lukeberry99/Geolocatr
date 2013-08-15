@@ -1,0 +1,16 @@
+section[role=location] {
+  width: 90%;
+  max-width: 90%;
+  margin: 20px auto;
+  .map {
+    background: $peter-river;
+    border-top: 10px solid $belize-hole;
+    padding: 30px 0 30px 0;
+    img {
+      max-width: 596px;
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
