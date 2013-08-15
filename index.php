@@ -26,7 +26,7 @@ if(isset($_POST["saveme"])) {
       <header role="logo">
         <a href="index.php">
           <h1>geolocatr<br />
-          <span>view locations from images</span></h1>
+          <span>geo location of geo tagged images</h1>
         </a>
       </header>
 
@@ -51,7 +51,7 @@ if(isset($_POST["saveme"])) {
             <h3>This image was taken here</h3>
           </header>
           <div class="map">
-            <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$results['lat']?>, <?=$results['long']?>&zoom=14&size=900x300&maptype=roadmap&markers=color:blue%7Clabel:X%7C<?=$results['lat']?>, <?=$results['long']?>&sensor=false" alt="The Map" />
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$results['lat']?>, <?=$results['long']?>&amp;zoom=14&amp;size=900x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:X%7C<?=$results['lat']?>, <?=$results['long']?>&amp;sensor=false" alt="The Map" />
           </div>
         </section>
       <?php endif; ?>
@@ -60,7 +60,7 @@ if(isset($_POST["saveme"])) {
 
         <section role="information">
           <div class="info">
-            <p><a class="show" id="show" href="#" onclick="showShit();">Click here to view raw EXIF data</a></p>
+            <p><a class="show" id="show" onclick="showShit();">Click here to view raw EXIF data</a></p>
             <div id='hidden-stuff'>
 <pre>
 <?print_r($exdata)?>
@@ -105,7 +105,7 @@ if(isset($_POST["saveme"])) {
       <header role="logo">
         <a href="index.php">
           <h1>geolocatr<br />
-          <span>view locations from images</span></h1>
+          <span>geo location of geo tagged images</h1>
         </a>
       </header>
 
