@@ -1,0 +1,24 @@
+section[role=information] {
+  width: 90%;
+  max-width: 90%;
+  margin: 20px auto;
+  .info {
+    background: $carrot;
+    border-top: 10px solid $pumpkin;
+    padding: 30px 0 30px 0;
+    #hidden-stuff {
+      display: none;
+    }
+    p {
+      text-align: center;
+      margin-top: -10px;
+    }
+    a { color: $wet-asphalt; }
+    pre {
+      font-weight: 400;
+      margin-left: 30px;
+      margin-top: 10px;
+      color: $midnight-blue;
+    }
+  }
+}

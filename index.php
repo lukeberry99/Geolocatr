@@ -6,6 +6,7 @@ if(isset($_POST["saveme"])) {
   $type = $_FILES["file"]["type"];
   if(($type == "image/jpeg") or ($type == "image/jpg")) {
     $Exif->set_image($_FILES["file"]["tmp_name"]);
+    $exdata = $Exif->get_exif();
   } else {
 
   }
@@ -28,12 +29,10 @@ if(isset($_POST["saveme"])) {
           <span>view locations from images</span></h1>
         </a>
       </header>
-      <section role="errors">
-        <?php $results = $Exif->get_location(); ?>
-      </section>
+
       <section role="upload">
         <header>
-          <h3>Upload an image to see location data</h3>
+          <h3>Upload an image to see location data (don't worry, we never save your images)</h3>
         </header>
         <div class="upload-area">
           <button class="upload" onclick="javascript:document.getElementById('file').click();">Choose an image</button>
@@ -42,6 +41,9 @@ if(isset($_POST["saveme"])) {
             <input type="hidden" id="saveme" name="saveme" />
           </form>
         </div>
+      </section>
+      <section role="errors">
+        <?php $results = $Exif->get_location(); ?>
       </section>
       <?php if(isset($results)): ?>
         <section role="location">
@@ -52,6 +54,21 @@ if(isset($_POST["saveme"])) {
             <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?=$results['lat']?>, <?=$results['long']?>&zoom=14&size=900x300&maptype=roadmap&markers=color:blue%7Clabel:X%7C<?=$results['lat']?>, <?=$results['long']?>&sensor=false" alt="The Map" />
           </div>
         </section>
+      <?php endif; ?>
+
+      <?php if(isset($exdata)): ?>
+
+        <section role="information">
+          <div class="info">
+            <p><a class="show" id="show" href="#" onclick="showShit();">Click here to view raw EXIF data</a></p>
+            <div id='hidden-stuff'>
+<pre>
+<?print_r($exdata)?>
+</pre>
+            </div>
+          </div>
+        </section>
+
       <?php  endif; ?>
     </div>
   </div>
@@ -61,6 +78,11 @@ if(isset($_POST["saveme"])) {
   <script>
     document.getElementById("file").onchange = function() {
       document.getElementById("imageform").submit();
+    }
+  </script>
+  <script>
+    function showShit() {
+      document.getElementById("hidden-stuff").style.display = "inline";
     }
   </script>
 </body>
@@ -91,7 +113,7 @@ if(isset($_POST["saveme"])) {
 
       <section role="upload">
         <header>
-          <h3>Upload an image to see location data</h3>
+          <h3>Upload an image to see location data (don't worry, we never save your images)</h3>
         </header>
         <div class="upload-area">
           <button class="upload" onclick="javascript:document.getElementById('file').click();">Choose an image</button>
