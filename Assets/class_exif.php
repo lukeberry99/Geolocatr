@@ -1,6 +1,7 @@
 <?php
 class Exif {
   public $the_image;
+  public $errors;
 
   public function set_image($in_image) {
     global $the_image;
@@ -10,10 +11,18 @@ class Exif {
   public function get_exif() {
     global $the_image;
 
+
     if(!empty($the_image)) {
-      return exif_read_data($the_image);
+      if(file_exists($the_image)) {
+        return exif_read_data($the_image);
+      }
+      else {
+        $errors = "The image does not exist";
+        echo "<p>$errors</p>";
+      }
     } else {
-      echo "Supply an Image";
+      $errors = "An image was not supplied or the image type is not supported (jpg only)";
+      echo "<p>$errors</p>";
     }
   }
 
@@ -25,8 +34,8 @@ class Exif {
   public function get_location() {
     global $the_image;
 
-    if(!empty($the_image)) {
-      $exif = $this->get_exif();
+    $exif = $this->get_exif();
+    if(isset($exif['GPSLongitude'])) {
 
       $degLong = $exif['GPSLongitude'][0];
       $minLong = $exif['GPSLongitude'][1];
@@ -48,7 +57,8 @@ class Exif {
 
       return $loc;
     } else {
-      echo "Supply an image";
+      $errors = "This image does not contain location data";
+      echo "<p>$errors</p>";
     }
   }
   public function get_image() {
